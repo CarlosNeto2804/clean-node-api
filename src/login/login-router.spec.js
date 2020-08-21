@@ -1,3 +1,4 @@
+const LoginRouter = require('./login-router')
 describe('Login router', () => {
     test('should return 400 if no email is provided', () => {
         const sutLoginRouter = new LoginRouter()
@@ -6,7 +7,17 @@ describe('Login router', () => {
                 password:"any_password",
             }
         }
-        const res = sutLoginRouter.route(req)
-        expect(res.status).toBe(400);
+        const res = sutLoginRouter.login(req)
+        expect(res.statusCode).toBe(400);
+    })
+    test('should return 400 if no password is provided', () => {
+        const sutLoginRouter = new LoginRouter()
+        const req = {
+            body:{
+                email:"email@body.com",
+            }
+        }
+        const res = sutLoginRouter.login(req)
+        expect(res.statusCode).toBe(400);
     })
 });

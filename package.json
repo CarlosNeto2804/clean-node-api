@@ -2,5 +2,11 @@
   "name": "clean-node-api",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^26.4.1"
+  },
+  "scripts": {
+    "test": "jest"
+  }
 }
